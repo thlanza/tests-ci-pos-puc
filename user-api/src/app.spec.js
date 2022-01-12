@@ -1,6 +1,5 @@
 const request = require('supertest');
 const { MongoClient } = require('mongodb');
-const { ObjectId } = require('bson');
 const app = require('./app');
 const UserRepository = require('./user-repository');
 
