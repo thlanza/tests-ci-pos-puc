@@ -17,9 +17,6 @@ jobs:
     services:
       mongodb:
         image: mongo
-        env:
-          MONGO_INITDB_ROOT_USERNAME: root
-          MONGO_INITDB_ROOT_PASSWORD: example
         ports:
           - 27017:27017 
 
