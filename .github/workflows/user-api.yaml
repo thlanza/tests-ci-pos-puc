@@ -23,6 +23,9 @@ jobs:
           node-version: 16.x
           cache: 'npm'
           cache-dependency-path: user-api/package-lock.json
+        env:
+          CI: true
+          MONGODB_URI: mongodb://localhost:27017/dev
       - run: npm ci
       - run: npm test -- --forceExit
 
