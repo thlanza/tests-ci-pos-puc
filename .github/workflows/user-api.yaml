@@ -10,6 +10,31 @@ defaults:
     working-directory: user-api
 
 jobs:
+  tests:
+    name: Testes de Unidade de Integração
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: root
+        ports:
+          - 27017:27017 
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: user-api/package-lock.json
+      - run: npm ci
+      - run: npm test -- --forceExit
+
+
   lint:
     name: Análise estática
     runs-on: ubuntu-latest
