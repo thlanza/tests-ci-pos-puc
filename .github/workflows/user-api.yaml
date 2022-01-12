@@ -12,6 +12,7 @@ defaults:
 jobs:
   tests:
     name: Testes de Unidade de Integração
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
