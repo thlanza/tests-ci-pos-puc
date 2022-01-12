@@ -6,7 +6,7 @@
   "scripts": {
     "clear:db": "node src/clear.database",
     "start": "nodemon src/server.js",
-    "test": "jest --watchAll --detectOpenHandles",
+    "test": "jest",
     "lint": "eslint src/server.js --fix"
   },
   "author": "",
